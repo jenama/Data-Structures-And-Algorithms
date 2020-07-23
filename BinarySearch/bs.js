@@ -20,17 +20,17 @@ const search = (nums, target) => {
             
           return mid
         } else if (nums[mid] < target) { 
-            //console.log('mid:', mid) 
+            console.log('mid:', mid) 
             start= mid + 1;
             
         } else {
-            
             end = mid -1;
         } 
-        // console.log('start:', start)
-        // console.log('end:', end)
-        // console.log('mid:', mid)
+        console.log('start:', start)
+        console.log('end:', end)
+        console.log('mid:', mid)
     }
          
     return -1
 };
+search(nums, target)
