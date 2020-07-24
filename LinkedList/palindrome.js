@@ -3,30 +3,81 @@
 // Output: false
 
 //  * Definition for singly-linked list.
-  function ListNode(val, next) {
-     this.val = (val===undefined ? 0 : val)
-     this.next = (next===undefined ? null : next)
-  }
+//   function ListNode(val, next) {
+//      this.val = (val===undefined ? 0 : val)
+//      this.next = (next===undefined ? null : next)
+//   }
 //  */
 // /**
 //  * @param {ListNode} head
 //  * @return {boolean}
 
 // https://leetcode.com/problems/palindrome-linked-list/
+
+//solution with unshift
+// const isPalindrome = (head) => {
+//   if (head === null) {
+//       return true
+//   }
+     
+//     let currNode = head
+//     let newArr = [currNode.val]
+//      while (currNode.next !== null) {
+//            currNode = currNode.next
+//          newArr.unshift(currNode.val)
+//         console.log('newArr:', newArr)
+//     }
+    
+//     let i = 0
+//     let j = newArr.length - 1
+
+//     while(i < j) {
+//         if(newArr[i] === newArr[j]) {
+//             console.log('head', head)
+//             console.log('newArr:', newArr)
+            
+//             i++;
+//             j--;
+//          } else {
+//              return false
+//          }
+//     }
+//       return true
+   
+// };
+
+
+   
+//solution with push because I noticed that push is twice as fast as unshift
 const isPalindrome = (head) => {
-  let currNode = head
-  if (head === null || currNode.next === null ) {
+  if (head === null) {
       return true
   }
+     
+    let currNode = head
+    let newArr = [currNode.val]
      while (currNode.next !== null) {
-        
-      console.log('check', currNode.next)
-       
-      if ( head === currNode.next) {
-          return true
-      }
-       currNode = currNode.next
+           currNode = currNode.next
+         newArr.unshift(currNode.val)
+        console.log('newArr:', newArr)
     }
-      return false
+    
+    let i = 0
+    let j = newArr.length - 1
+
+    while(i < j) {
+        if(newArr[i] === newArr[j]) {
+            console.log('head', head)
+            console.log('newArr:', newArr)
+            
+            i++;
+            j--;
+         } else {
+             return false
+         }
+    }
+      return true
    
 };
+isPalindrome(head)
+
