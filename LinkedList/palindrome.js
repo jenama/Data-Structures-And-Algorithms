@@ -14,37 +14,37 @@
 
 // https://leetcode.com/problems/palindrome-linked-list/
 
-//solution with unshift
-// const isPalindrome = (head) => {
-//   if (head === null) {
-//       return true
-//   }
+// solution with unshift
+const isPalindrome = (head) => {
+  if (head === null) {
+      return true
+  }
      
-//     let currNode = head
-//     let newArr = [currNode.val]
-//      while (currNode.next !== null) {
-//            currNode = currNode.next
-//          newArr.unshift(currNode.val)
-//         console.log('newArr:', newArr)
-//     }
+    let currNode = head
+    let newArr = [currNode.val]
+     while (currNode.next !== null) {
+           currNode = currNode.next
+         newArr.unshift(currNode.val)
+        console.log('newArr:', newArr)
+    }
     
-//     let i = 0
-//     let j = newArr.length - 1
+    let i = 0
+    let j = newArr.length - 1
 
-//     while(i < j) {
-//         if(newArr[i] === newArr[j]) {
-//             console.log('head', head)
-//             console.log('newArr:', newArr)
+    while(i < j) {
+        if(newArr[i] === newArr[j]) {
+            console.log('head', head)
+            console.log('newArr:', newArr)
             
-//             i++;
-//             j--;
-//          } else {
-//              return false
-//          }
-//     }
-//       return true
+            i++;
+            j--;
+         } else {
+             return false
+         }
+    }
+      return true
    
-// };
+};
 
 
    
@@ -58,7 +58,7 @@ const isPalindrome = (head) => {
     let newArr = [currNode.val]
      while (currNode.next !== null) {
            currNode = currNode.next
-         newArr.unshift(currNode.val)
+         newArr.push(currNode.val)
         console.log('newArr:', newArr)
     }
     
