@@ -17,16 +17,20 @@
 //  / \   / \
 // 9   6 3   1
 
-var invertTree = function (root) {
-  let left = root.left;
-  let right = root.right;
-  if (!root) {
-    return;
-  }
-  root.right = left;
-  root.left = right;
-  invertTree(root.right);
-  invertTree(root.left);
 
-  return root;
+ const invertTree = (root) => {
+   
+    if (!root) {
+        return root
+    }
+    let l;
+    let r;
+    r = invertTree(root.right)
+    l = invertTree(root.left)
+     root.left = r
+    root.right = l
+  
+    return root
+    
 };
+
