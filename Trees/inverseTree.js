@@ -35,9 +35,9 @@
     l = invertTree(root.left)
    
      root.left = r
-      console.log('r:', root.left)
+      // console.log('r:', root.left)
     root.right = l
-     console.log('l:', root.right)
+    //  console.log('l:', root.right)
   
     return root
     
