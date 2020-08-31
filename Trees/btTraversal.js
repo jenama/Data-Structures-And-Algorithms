@@ -25,12 +25,12 @@ a.right = c;
 
 // 1.) Root node, 2.) traverse left subtree, 3.) traverse right subtree.
 function preOrder(node){
-let arr = []
-  if (!node) {
+    let arr = []
+    if (!node) {
     return 
-  }
+}
   
-  function pot (node) {
+function pot (node) {
     arr.push(node.data)
     
     if (node.left) {
@@ -40,7 +40,7 @@ let arr = []
     if(node.right) {
       pot(node.right)
      }
-  }
+}
   
   pot(node)
   return arr
