@@ -18,22 +18,24 @@
 // };
 // console.log(isPerfectSquare(num))
 
+//////////////////////////////////////////////
 // Binary Search version
 const isPerfectSquare = (num) => {
     /* check if the num is less than  to 1 b/c 0*0 = 0 and since
     num is positive negative numbers will also be false.
     */
     if (num < 1) return false
+    
     let first = 1
     let last = num
    while (first <= last) {
        let mid = Math.floor((first + last)/2)
        console.log(mid)
+       /* check if the middle * middle is equal the num*/
        if (mid * mid === num) return true       
        
        if (mid * mid > num) {
             last = mid - 1
-            
         } else if (mid * mid < num) {
            first = mid + 1
         }
