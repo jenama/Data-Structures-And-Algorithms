@@ -4,7 +4,6 @@
 // pop() -- Removes the element on top of the stack.
 // top() -- Get the top element.
 // getMin() -- Retrieve the minimum element in the stack.
- 
 
 // Example 1:
 
@@ -24,47 +23,80 @@
 // minStack.pop();
 // minStack.top();    // return 0
 // minStack.getMin(); // return -2
+// let x =  [[],[-2],[0],[-3],[],[],[],[]]
+class MinStack {
+  constructor() {
+    this.firstStack = [];
+    this.secStack = [];
+    this.min = Infinity;
+  }
+  //  * @param {number} x
+  //  * @return {void}
 
-const MinStack = () => {
-    this.arr = []
+  push(x){
+    this.firstStack.push(x);
+    console.log('push', this.firstStack)
+  };
+
+  /**
+  //  * @return {void}
+ */
+  pop() {
+     console.log('pop', this.firstStack.pop())
+    return this.firstStack.pop();
+  };
+
+  /**
+  //  * @return {number}
+ */
+  top(){
+     console.log('top', this.firstStack[this.firstStack.length - 1])
+    return this.firstStack[this.firstStack.length - 1];
+  };
+
+  /**
+  //  * @return {number}
+ */
+  getMin()  {
+    let currMin = this.min
+    while(this.firstStack.length !== 0) {
+      let last = this.firstStack[this.firstStack.length -1]
+        if (last < currMin ){
+          this.firstStack.pop()
+          this.secStack.push(last)
+          currMin = last
+        } else {
+            this.firstStack.pop()
+            this.secStack.push(last)
+        }
+    }
     
-};
+    while(this.secStack.length !== 0) {
+        let element = this.secStack.pop()
+        this.firstStack.push(element)
+    }
+    return currMin
+    }
+}
 
-/** 
-//  * @param {number} x
-//  * @return {void}
- */
-MinStack.prototype.push = function(x) {
-  this.arr.push(x)
-};
 
-/**
-//  * @return {void}
- */
-MinStack.prototype.pop = function() {
-     this.arr.pop()
-};
 
-/**
-//  * @return {number}
- */
-MinStack.prototype.top = function() {
-   return this.arr[this.arr.length - 1]
-};
 
-/**
-//  * @return {number}
- */
-MinStack.prototype.getMin = function() {
-    let newArr = this.arr.slice()
-   return Math.min(...this.arr)
-};
 
-/** 
- * Your MinStack object will be instantiated and called as such:
- * var obj = new MinStack()
- * obj.push(x)
- * obj.pop()
- * var param_3 = obj.top()
- * var param_4 = obj.getMin()
- */
+
+
+// Your MinStack object will be instantiated and called as such:
+var obj = new MinStack();
+
+obj.push([]);
+obj.push([-2]);
+obj.push([0]);
+obj.push([-3]);
+obj.push([]);
+obj.push([]);
+obj.push([]);
+obj.push([]);
+
+obj.pop();
+var param_3 = obj.top();
+// var param_4 = obj.getMin();
