@@ -79,24 +79,23 @@ class MinStack {
     }
 }
 
+const stack = new MinStack();
+stack.push([-2]);
+stack.push([0]);
+stack.push([-3]);
+console.log(stack.getMin())
+stack.pop()
+stack.top()
+// stack.getMin()
+console.log(stack.getMin())
+
+// console.log(MinStack.getMin())// Your MinStack object will be instantiated and called as such:
 
 
 
 
 
 
-// Your MinStack object will be instantiated and called as such:
-var obj = new MinStack();
-
-obj.push([]);
-obj.push([-2]);
-obj.push([0]);
-obj.push([-3]);
-obj.push([]);
-obj.push([]);
-obj.push([]);
-obj.push([]);
-
-obj.pop();
-var param_3 = obj.top();
+// obj.pop();
+// var param_3 = obj.top();
 // var param_4 = obj.getMin();
