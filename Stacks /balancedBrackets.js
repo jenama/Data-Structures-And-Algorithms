@@ -29,6 +29,8 @@ function isBalanced(s) {
     } 
     let stack = []
 
+    if (stack.length !== 0) return 'NO'
+    
     for(let i = 0; i < s.length; i++) {
         if ((s[i] === '{') || (s[i] === '[') || (s[i] === '(')) { 
             stack.push(s[i])
@@ -39,8 +41,7 @@ function isBalanced(s) {
             }
         } 
     }
-    if (stack.length !== 0) return 'NO'
-        
+     
     return 'YES'; 
 }
 console.log(isBalanced('{[()]}'))
