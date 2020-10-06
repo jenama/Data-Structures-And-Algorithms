@@ -42,7 +42,7 @@ class MinStack {
   //  * @return {void}
  */
   pop() {
-     console.log('pop', this.firstStack.pop())
+     
     return this.firstStack.pop();
   };
 
@@ -50,7 +50,7 @@ class MinStack {
   //  * @return {number}
  */
   top(){
-     console.log('top', this.firstStack[this.firstStack.length - 1])
+     
     return this.firstStack[this.firstStack.length - 1];
   };
 

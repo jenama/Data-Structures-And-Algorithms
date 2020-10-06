@@ -19,17 +19,16 @@ isBalanced has the following parameter(s):
 s: a string of brackets
 */
 
-
 //solution without a class 
+const Stack = require('./stack')
+
 function isBalanced(s) {
     let brackets = {
                     '{' : '}',
                     '(' : ')',
                     '[' : ']'
     } 
-    let stack = []
-
-    if (stack.length !== 0) return 'NO'
+    const stack = new Stack()
     
     for(let i = 0; i < s.length; i++) {
         if ((s[i] === '{') || (s[i] === '[') || (s[i] === '(')) { 
@@ -40,8 +39,12 @@ function isBalanced(s) {
                 return 'NO'
             }
         } 
-    }
-     
+    } 
+
+    if (!stack.isEmpty()) {
+        return 'NO'
+    } 
+
     return 'YES'; 
 }
 console.log(isBalanced('{[()]}'))

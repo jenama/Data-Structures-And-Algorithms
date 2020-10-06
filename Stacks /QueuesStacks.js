@@ -17,43 +17,54 @@
 /**
  * Initialize your data structure here.
  */
-var MyQueue = function() {
-    this.stack = []
-};
 
-/**
- * Push element x to the back of queue. 
- * @param {number} x
- * @return {void}
- */
-MyQueue.prototype.push = function(x) {
-   return this.stack.push(x)
-};
+const Stack = require('./stack')
+ class MyQueue {
+     constructor() {
+        this.stackOne = new Stack()
+        this.stackTwo = new Stack()  
+     }
+     
+//  Push element x to the back of queue. 
+//  * @param {number} x
+//  * @return {void}
+
+    push (x) {
+        this.stackOne.push(x)
+    };
 
 /**
  * Removes the element from in front of queue and returns that element.
  * @return {number}
  */
-MyQueue.prototype.pop = function() {
-   return this.stack.shift()
-};
+    pop() {
+        while(!this.stackOne.isEmpty()) {
+            let element = this.stackOne.pop()
+            this.stackTwo.push(element) 
+        }
+    
+        // if(!this.stackTwo.isEmpty()) {
+            
+        // }
+        return this.stackTwo.pop()
+    };
 
 /**
  * Get the front element.
- * @return {number}
+  * @return {number}
  */
-MyQueue.prototype.peek = function() {
-    return this.stack[0]
-};
+    peek() {
+        return this.stackTwo[0]
+    };
 
 /**
  * Returns whether the queue is empty.
- * @return {boolean}
+//  * @return {boolean}
  */
-MyQueue.prototype.empty = function() {
-    return this.stack.length === 0
-};
-
+    empty () {
+        return this.stackTwo.length === 0
+    };
+ }
 /** 
  * Your MyQueue object will be instantiated and called as such:
  * var obj = new MyQueue()

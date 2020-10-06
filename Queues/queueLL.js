@@ -12,6 +12,7 @@ class QueueWithLL {
         // this.queue = []
         this.length = 0;
         this.head = null;
+        this.tail = null;
         // this.currNode = this.head
     }
 

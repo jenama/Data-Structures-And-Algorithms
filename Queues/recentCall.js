@@ -27,8 +27,8 @@ class RecentCounter {
 };
 
 /** 
- * @param {number} t
- * @return {number}
+//  * @param {number} t
+//  * @return {number}
  */
 RecentCounter.prototype.ping = function(t) {
       this.request.push(t)
