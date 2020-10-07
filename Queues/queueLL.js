@@ -45,20 +45,10 @@ class QueueWithLL {
     }
     
 
-    front() {
+    peek() {
         if (this.head){
             return this.head.val
         }
-    }
-
-    rear() {
-       let currNode = this.head
-        if(!currNode) return null;
-
-        while(currNode.next) {
-            currNode = currNode.next;
-        }
-        return currNode.val
     }
 
     size() {
@@ -84,7 +74,7 @@ queue.enqueue(4)
 queue.dequeue()
 queue.dequeue()
 
-console.log(queue.front())
+console.log(queue.peek())
 console.log(queue.rear())
 console.log(queue)
 console.log(queue.size())

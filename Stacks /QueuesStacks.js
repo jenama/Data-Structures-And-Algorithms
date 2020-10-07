@@ -38,14 +38,12 @@ const Stack = require('./stack')
  * @return {number}
  */
     pop() {
-        while(!this.stackOne.isEmpty()) {
-            let element = this.stackOne.pop()
-            this.stackTwo.push(element) 
+        if(this.stackTwo.isEmpty()) {
+            while(!this.stackOne.isEmpty()) {
+                let val = this.stackOne.pop()
+                this.stackTwo.push(val) 
+            }
         }
-    
-        // if(!this.stackTwo.isEmpty()) {
-            
-        // }
         return this.stackTwo.pop()
     };
 
@@ -54,7 +52,13 @@ const Stack = require('./stack')
   * @return {number}
  */
     peek() {
-        return this.stackTwo[0]
+        if(this.stackTwo.isEmpty()){
+            while(!this.stackOne.isEmpty()) {
+                let removed = this.stackOne.pop()
+                this.stackTwo.push(removed) 
+            }
+        }
+        return this.stackTwo.peek()
     };
 
 /**
@@ -62,14 +66,18 @@ const Stack = require('./stack')
 //  * @return {boolean}
  */
     empty () {
-        return this.stackTwo.length === 0
+        let bothStacks = this.stackTwo.isEmpty() && this.stackOne.isEmpty()
+        return bothStacks
     };
  }
-/** 
- * Your MyQueue object will be instantiated and called as such:
- * var obj = new MyQueue()
- * obj.push(x)
- * var param_2 = obj.pop()
- * var param_3 = obj.peek()
- * var param_4 = obj.empty()
- */
+
+//  Your MyQueue object will be instantiated and called as such:
+var obj = new MyQueue()
+obj.push(1)
+obj.push(2)
+console.log(obj.peek())
+console.log(obj.pop())
+console.log(obj.empty())
+obj.peek()
+obj.empty()
+ 
