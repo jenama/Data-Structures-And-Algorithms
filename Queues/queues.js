@@ -40,6 +40,3 @@ myQueue.enqueue(4)
 myQueue.dequeue()
 
 console.log(myQueue.rear())
-
-
-

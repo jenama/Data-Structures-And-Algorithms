@@ -13,21 +13,19 @@ class QueueWithLL {
         this.length = 0;
         this.head = null;
         this.tail = null;
-        // this.currNode = this.head
+       
     }
 
     enqueue(val) {
-        const listHead = new ListNode(val)
-        let currNode;
-
+        const node = new ListNode(val)
+        
         if (!this.head) {
-            this.head = listHead;
+            this.head = node;
+            this.tail = node
+            
         } else {
-            currNode = this.head;
-            while(currNode.next){
-                currNode = currNode.next
-            }
-            currNode.next = listHead;
+            this.tail.next = node 
+            this.tail = node
         }
         this.length++;  
     }
@@ -46,8 +44,8 @@ class QueueWithLL {
     
 
     peek() {
-        if (this.head){
-            return this.head.val
+        if (this.tail){
+            return this.tail.val
         }
     }
 
@@ -65,17 +63,17 @@ class QueueWithLL {
 }
 
 const queue = new QueueWithLL()
+console.log(queue)
 
 queue.enqueue(1)
 queue.enqueue(2)
 queue.enqueue(3)
 queue.enqueue(4)
+console.log(queue)
 
 queue.dequeue()
 queue.dequeue()
 
 console.log(queue.peek())
-console.log(queue.rear())
-console.log(queue)
 console.log(queue.size())
 console.log(queue.isEmpty())
