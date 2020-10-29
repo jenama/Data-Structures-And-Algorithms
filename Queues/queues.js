@@ -4,12 +4,10 @@ class Queue {
     }
 
     enqueue(x) {
-        this.queue.push(x)
-        console.log(this.queue)
+        this.queue.push(x)  
     }
 
     dequeue() {
-        console.log(this.queue)
         return this.queue.shift()
     }
 
@@ -30,13 +28,6 @@ class Queue {
     }
 }
 
-const myQueue = new Queue()
+module.exports = Queue
 
-myQueue.enqueue(1)
-myQueue.enqueue(2)
-myQueue.enqueue(3)
-myQueue.enqueue(4)
 
-myQueue.dequeue()
-
-console.log(myQueue.rear())

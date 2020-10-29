@@ -25,18 +25,18 @@ const Stack = require('./stack')
         this.stackTwo = new Stack()  
      }
      
-//  Push element x to the back of queue. 
-//  * @param {number} x
-//  * @return {void}
+    //  Push element x to the back of queue. 
+    //  * @param {number} x
+    //  * @return {void}
 
     push (x) {
         this.stackOne.push(x)
     };
 
-/**
- * Removes the element from in front of queue and returns that element.
- * @return {number}
- */
+    /**
+    * Removes the element from in front of queue and returns that element.
+    * @return {number}
+    */
     pop() {
         if(this.stackTwo.isEmpty()) {
             while(!this.stackOne.isEmpty()) {
@@ -47,10 +47,10 @@ const Stack = require('./stack')
         return this.stackTwo.pop()
     };
 
-/**
- * Get the front element.
-  * @return {number}
- */
+    /**
+    * Get the front element.
+    * @return {number}
+    */
     peek() {
         if(this.stackTwo.isEmpty()){
             while(!this.stackOne.isEmpty()) {
@@ -61,10 +61,10 @@ const Stack = require('./stack')
         return this.stackTwo.peek()
     };
 
-/**
- * Returns whether the queue is empty.
-//  * @return {boolean}
- */
+    /**
+    * Returns whether the queue is empty.
+    //  * @return {boolean}
+    */
     empty () {
         let bothStacks = this.stackTwo.isEmpty() && this.stackOne.isEmpty()
         return bothStacks
@@ -73,6 +73,7 @@ const Stack = require('./stack')
 
 //  Your MyQueue object will be instantiated and called as such:
 var obj = new MyQueue()
+console.log()
 obj.push(1)
 obj.push(2)
 console.log(obj.peek())
