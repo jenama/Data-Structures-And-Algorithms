@@ -76,8 +76,7 @@ class MyStack {
   /*Returns whether the stack is empty.
      @return {boolean}*/
   empty() {
-    let twoQueues = this.secQueue.isEmpty() && this.q.isEmpty();
-    return twoQueues;
+    return this.q.isEmpty()
   }
 }
 
@@ -89,10 +88,10 @@ stack.push(2);
 // console.log("after", stack);
 console.log("top", stack.top());
 console.log("after top", stack);
-console.log("pop1", stack.pop());
+// console.log("pop1", stack.pop());
 console.log("after pop1", stack);
 console.log("top", stack.top());
 console.log("after top", stack);
-console.log("pop2", stack.pop());
+// console.log("pop2", stack.pop());
 console.log("after pop2", stack);
 console.log(stack.empty());

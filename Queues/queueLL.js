@@ -44,8 +44,8 @@ class QueueWithLL {
     
 
     peek() {
-        if (this.tail){
-            return this.tail.val
+        if (this.head){
+            return this.head.val
         }
     }
 
