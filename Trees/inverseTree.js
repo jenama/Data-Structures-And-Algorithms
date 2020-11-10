@@ -18,11 +18,13 @@
 // 9   6 3   1
 
 
- function TreeNode(val, left, right) {
+class TreeNode {
+  constructor(val, left, right) {
     this.val = (val===undefined ? 0 : val)
-      this.left = (left===undefined ? null : left)
-      this.right = (right===undefined ? null : right)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
   }
+}
 
  const invertTree = (root) => {
    

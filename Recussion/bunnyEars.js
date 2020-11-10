@@ -12,4 +12,4 @@ function bunnyEars(bunnies){
    
   return (bunnies + bunnies)
 }
-bunnyEars(100)
+console.log(bunnyEars(100))

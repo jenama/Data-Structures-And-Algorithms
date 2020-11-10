@@ -9,7 +9,6 @@
 
 // data Tree a = Nil | Node (Tree a) a (Tree a)
 
-
 /*
 A Node has the following properties:
 var data; // A number or string.
@@ -24,71 +23,70 @@ a.left = b;
 a.right = c;
 
 // 1.) Root node, 2.) traverse left subtree, 3.) traverse right subtree.
-function preOrder(node){
-    let arr = []
-    if (!node) {
-    return 
-}
-  
-function pot (node) {
-    arr.push(node.data)
-    
+function preOrder(node) {
+  let arr = [];
+  if (!node) {
+    return;
+  }
+
+  function pot(node) {
+    arr.push(node.data);
+
     if (node.left) {
-        pot(node.left)
+      pot(node.left);
     }
-  
-    if(node.right) {
-      pot(node.right)
-     }
-}
-  
-  pot(node)
-  return arr
+
+    if (node.right) {
+      pot(node.right);
+    }
+  }
+
+  pot(node);
+  return arr;
 }
 
 // 1.) Traverse left subtree, 2.) root node, 3.) traverse right subtree.
-function inOrder(node){
-  let arr = []
+function inOrder(node) {
+  let arr = [];
   if (!node) {
-    return
+    return;
   }
-  
-  function iot (node) {
+
+  function iot(node) {
     if (node.left) {
-       iot(node.left)
+      iot(node.left);
     }
-    
-    arr.push(node.data)
-    
+
+    arr.push(node.data);
+
     if (node.right) {
-      iot(node.right)
+      iot(node.right);
     }
   }
-   
-  iot(node)
-   return arr
+
+  iot(node);
+  return arr;
 }
 
 // 1.) Traverse left subtree, 2.) traverse right subtree, 3.) root node.
-function postOrder(node){
-  let arr = []
-   if (!node) {
-    return
+function postOrder(node) {
+  let arr = [];
+  if (!node) {
+    return;
   }
-  
-  function traversal (node){
-    if (node.left) {
-      traversal(node.left)
-    }
-    
-    if (node.right){
-      traversal(node.right)
-    }
-    
-    arr.push(node.data)
-  }
-  
-    traversal(node)
-    return arr
-}
 
+  function traversal(node) {
+    if (node.left) {
+      traversal(node.left);
+    }
+
+    if (node.right) {
+      traversal(node.right);
+    }
+
+    arr.push(node.data);
+  }
+
+  traversal(node);
+  return arr;
+}
