@@ -9,23 +9,27 @@ Given an integer array arr that is guaranteed to be a mountain, return any i suc
   */
 
 const peakIndexInMountainArray = (A) => {
-  let f = 0;
-  let l = A.length - 1;
-  while (f < l) {
-    let mid = Math.floor((f + l) / 2);
-    console.log("mid", mid);
-    if (A[mid - 1] < A[mid] && A[mid] > A[mid + 1]) {
-      return mid;
-    } else if (A[mid - 1] < A[mid]) {
-      f = mid + 1;
-    } else {
-      l = mid - 1;
+   let f = 0;
+    let l = A.length -1 
+    while (f < l){
+      let mid = Math.floor((f + l)/2) 
+       console.log('mid', mid)
+        if(A[mid-1] < A[mid] && A[mid] > A[mid+1]) {
+            return mid
+        }else if (A[mid-1] > A[mid] && A[mid] > A[mid+1] ) {
+            l = mid 
+        } else if (A[mid - 1] <  A[mid] && A[mid] < A[mid + 1]) {
+            f = mid + 1         
+        }else {
+            l = mid - 1 
+        }
     }
-  }
-  return f;
+    return f
 };
+
 console.log(peakIndexInMountainArray([0,1,0]));// 1
 console.log(peakIndexInMountainArray([0,2,1,0]));//1
 console.log(peakIndexInMountainArray([24,69,100,99,79,78,67,36,26,19]));//2
-// console.log(peakIndexInMountainArray());
+console.log(peakIndexInMountainArray([3,5,3,2,0]));
+console.log(peakIndexInMountainArray([12,13,19,41,55,69,70,71,72,96]));
 

@@ -8,21 +8,23 @@
 // You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 let nums = [2, 7, 11, 15]
-let target = 9
+let target = 26
 const twoSum = (nums, target) => {
 	let emptyArr = []
 	let obj = {}
 	for (let i = 0; i < nums.length; i++) {
 		let diff = target - nums[i]
 		console.log('diff:', diff)
-		if(obj[nums[i]] >= 0) {
+		if(obj[diff] >= 0) {
+			
 			console.log('num', i)
-			return [obj[nums[i]], i]
+			return [obj[diff], i]
 		} else {
-			obj[diff] = i
+			obj[nums[i]] = i
 		}
+		console.log(obj)
 	}
 		return emptyArr
 }
-twoSum(nums, target)
+console.log(twoSum(nums, target))
     
