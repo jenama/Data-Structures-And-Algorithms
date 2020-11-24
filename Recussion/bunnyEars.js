@@ -8,6 +8,7 @@ bunnyEars(1) → 2
 bunnyEars(2) → 4 */
 
 function bunnyEars(bunnies){
+  debug
   if (bunnies < 1) return 0
    
   return (bunnies + bunnies)
