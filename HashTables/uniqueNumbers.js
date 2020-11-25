@@ -34,13 +34,13 @@ const uniqueOccurrences = (arr) => {
     
     return true
 };
+/////////////////////////////////////////////////////////////////
 
 const uniqueOccurrences2 = (arr) => {
  let unique = {}
  let occurrences = {}
     for (let el of arr) {
         unique[el] = (unique[el] || 0) + 1
-          // occurrences.add(unique[item])
           console.log(unique)  
     }
     
